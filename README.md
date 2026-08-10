@@ -1,40 +1,69 @@
-# Fleet Inventory
+# 📋 Fleet Inventory — The Quartermaster's Clipboard
 
-> The map of what we've built. What works, what's close, what's research.
+> *You do not read it to celebrate. You read it so you do not grab something that will crumble the second you put weight on it.*
 
-## What This Is
+Six documents scanning 200+ repos. The honest map of what the fleet has built, what works, what's close, and what's research. Read these before starting new work.
 
-Three documents that together form a complete inventory of the SuperInstance fleet — 200+ repositories scanned and categorized by production-readiness.
+**Created:** August 9, 2026 · **Last scan:** August 9, 2026 · **Total repos:** 200+
+
+---
 
 ## Documents
 
-### FLEET-ASSESSMENT.md
-Deep inventory of all production-ready and near-ready code. Covers:
-- **Marine Stack** (vessel-agent-system, hermes-perception, hermes-cloudflare)
-- **Cognitive Backbone** (Slackwater Python + Rust: perception, cognition, harmony, lattice, tempo, t-minus)
-- **Game Engines** (MUD Engine, Officers' Quarters, Plato's Shell, The Tap, ScummVM Arcade)
-- **Infrastructure** (Collective Unconscious, Lucineer Roblox pipeline, Cloudflare Workers)
-- **Integration opportunities**
+| Document | What It Covers |
+|----------|---------------|
+| [`FLEET-ASSESSMENT.md`](./FLEET-ASSESSMENT.md) | Deep inventory of all production-ready code. Marine stack (vessel-agent-system, hermes, sensor-bridge), cognitive backbone (Slackwater Python + Rust), game engines (MUD, OQ, Plato's Shell, The Tap, ScummVM), infrastructure (Collective Unconscious, Lucineer, Cloudflare Workers). |
+| [`STUDY-REPO-ASSESSMENT.md`](./STUDY-REPO-ASSESSMENT.md) | 85 research/experimental repos assessed. Active vs dormant, paper-backed vs experimental, production-informative vs exploratory. |
+| [`DEEP-REPO-ASSESSMENT.md`](./DEEP-REPO-ASSESSMENT.md) | Code-level integration plans for 10 high-value repos. File paths, function signatures, specific wiring instructions. Not READMEs — actual source code analysis. |
+| [`integration-matrix.md`](./integration-matrix.md) | Cross-repo connection map. Which repos feed which. Top 10 integrations ranked by leverage. The cognitive triangle: Perception → Collective Unconscious → MUD Engine. |
+| [`CUTTING-EDGE-RESEARCH.md`](./CUTTING-EDGE-RESEARCH.md) | August 2026 landscape scan. Multi-agent frameworks, MCP, Cloudflare Workers AI, JEPA, local LLMs, vector DBs, game AI. Competitive analysis: is anyone building SuperInstance? |
+| [`NEXT-LEVEL-PLAN.md`](./NEXT-LEVEL-PLAN.md) | Seven ranked projects from multi-model synthesis (DeepSeek Pro + Seed Mini + Hermes 405B). The thesis: we built 70 repos in 2 months. The parts are excellent. The joints don't exist. |
 
-### STUDY-REPO-ASSESSMENT.md
-Inventory of all `study-*` repos (50+ research repositories). Categorized by:
-- Active vs. dormant
-- Paper-backed vs. experimental
-- Production-informative vs. exploratory
+---
 
-### integration-matrix.md
-The connection map — which repos feed which, what's wired, what's not. The highest-leverage integration: **Slackwater-Perception → Collective Unconscious → MUD Engine**.
+## Executive Summary (from FLEET-ASSESSMENT)
 
-## Usage
+**Production-ready:**
+- **Slackwater Python stack** — 6 packages, 508+ tests. The cognitive backbone.
+- **Slackwater-Rust workspace** — 3 crates, 308 tests, zero unsafe. Performance cores.
+- **MUD Engine** — 10-package TypeScript monorepo. The game engine for AI agents.
+- **Vessel Agent System (AELMA)** — 178 files, 34 test suites. The marine stack.
 
-Read these before starting new work. The fleet is large enough that you'll forget what exists. This is the map.
+**Close but needs polish:**
+- [officers-quarters](https://github.com/SuperInstance/officers-quarters) · [platos-shell](https://github.com/SuperInstance/platos-shell) · [the-tap](https://github.com/SuperInstance/the-tap) · [scummvm-arcade](https://github.com/SuperInstance/scummvm-arcade) · [collective-unconscious](https://github.com/SuperInstance/collective-unconscious)
 
-## Status
+**Highest-leverage integration:**
+Slackwater-Perception → Collective Unconscious → MUD Engine. That triangle is the product.
 
-- **Created:** August 9, 2026
-- **Last scan:** August 9, 2026
-- **Total repos scanned:** 200+
+---
+
+## How to Use
+
+1. **Read [FLEET-ASSESSMENT.md](./FLEET-ASSESSMENT.md) first.** It tells you what exists and what condition it's in.
+2. **Check [integration-matrix.md](./integration-matrix.md)** to see what's wired and what's not.
+3. **Drill into [DEEP-REPO-ASSESSMENT.md](./DEEP-REPO-ASSESSMENT.md)** for code-level integration plans on the top 10 repos.
+4. **Consult [NEXT-LEVEL-PLAN.md](./NEXT-LEVEL-PLAN.md)** before planning new work — it ranks the 7 highest-leverage projects.
+5. **Scan [CUTTING-EDGE-RESEARCH.md](./CUTTING-EDGE-RESEARCH.md)** to know what the outside world is building.
+6. **Check [STUDY-REPO-ASSESSMENT.md](./STUDY-REPO-ASSESSMENT.md)** before creating a new study repo — someone may have already explored it.
+
+---
+
+## Fleet Connections
+
+- [fleet-wiki](https://github.com/SuperInstance/fleet-wiki) — wiki pulls fleet status from these assessments
+- [cocapn-dashboard](https://github.com/SuperInstance/cocapn-dashboard) — dashboard visualizes fleet status data
+- [fleet-connections](https://github.com/SuperInstance/fleet-connections) — integration keel implements the wiring plans from DEEP-REPO-ASSESSMENT
+- [fleet-envelope](https://github.com/SuperInstance/fleet-envelope) — event grammar for the integrations listed here
+- [AI-Writings](https://github.com/SuperInstance/AI-Writings) — corpus sourced from the creative repos assessed here
+
+---
+
+## The Hermit Crab Connection
+
+The inventory IS the shell inventory. Before an agent finds a shell to inhabit, the quartermaster checks the clipboard to see what shells exist and what condition they're in. [mud-engine](https://github.com/SuperInstance/mud-engine) agents reference fleet-inventory to know what tools are available.
+
+---
 
 ## License
 
-MIT
+MIT · Built by Casey DiGennaro & the SuperInstance Fleet
