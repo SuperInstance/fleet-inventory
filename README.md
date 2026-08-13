@@ -64,6 +64,40 @@ The inventory IS the shell inventory. Before an agent finds a shell to inhabit, 
 
 ---
 
+## Further Reading
+
+### For Developers
+
+- [Fleet Assessment](FLEET-ASSESSMENT.md) — the full inventory
+- [Deep Repo Assessment](DEEP-REPO-ASSESSMENT.md) — code-level integration plans
+- [Integration Matrix](integration-matrix.md) — cross-repo connection map
+- [Cutting-Edge Research](CUTTING-EDGE-RESEARCH.md) — August 2026 landscape scan
+- [Next-Level Plan](NEXT-LEVEL-PLAN.md) — 7 ranked projects from multi-model synthesis
+
+### For Project Managers
+
+- [Technical Debt (Wikipedia)](https://en.wikipedia.org/wiki/Technical_debt) — what the assessment measures
+- [Software Rot (Wikipedia)](https://en.wikipedia.org/wiki/Software_rot) — why inventory matters
+- [Dependency Hell (Wikipedia)](https://en.wikipedia.org/wiki/Dependency_hell) — tracking cross-repo dependencies
+- [Code Review (Wikipedia)](https://en.wikipedia.org/wiki/Code_review) — assessment methodology
+- [Software Archaeology](https://en.wikipedia.org/wiki/Software_archaeology) — understanding legacy code
+
+### For Architects
+
+- [System Integration (Wikipedia)](https://en.wikipedia.org/wiki/System_integration) — what the integration matrix maps
+- [Coupling (Computer Programming)](https://en.wikipedia.org/wiki/Coupling_(computer_programming)) — why loose coupling matters
+- [Cohesion (Computer Science)](https://en.wikipedia.org/wiki/Cohesion_(computer_science)) — module-level quality metric
+- [Service-Oriented Architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture) — fleet architecture pattern
+
+### For Researchers
+
+- [Multi-Agent Systems (Wikipedia)](https://en.wikipedia.org/wiki/Multi-agent_system) — what the fleet implements
+- [Emergence (Wikipedia)](https://en.wikipedia.org/wiki/Emergence) — complex behavior from simple agents
+- [Model Context Protocol (MCP)](https://en.wikipedia.org/wiki/Model_Context_Protocol) — agent communication standard
+- [Large Language Models (Wikipedia)](https://en.wikipedia.org/wiki/Large_language_model) — the AI substrate
+
+---
+
 ## License
 
 MIT · Built by Casey DiGennaro & the SuperInstance Fleet
