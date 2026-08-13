@@ -9,6 +9,7 @@ set -euo pipefail
 PROJECTS_DIR="${PROJECTS_DIR:-/home/eileen/projects}"
 JSON_MODE=false
 RUN_MODE=false
+JSON_ENTRIES=""
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -108,7 +109,9 @@ for dir in "$PROJECTS_DIR"/*/; do
   [ "$rcount" -eq 0 ] && [ "$rfail" -eq 0 ] && continue
   
   if [ "$JSON_MODE" = true ]; then
-    echo "{\"repo\": \"$rname\", \"tests\": $rcount, \"failed\": $rfail},"
+    # Build JSON array — collect entries to avoid trailing commas
+    JSON_ENTRIES=$(printf '%s{"repo": "%s", "tests": %d, "failed": %d}' "$JSON_ENTRIES" "$rname" "$rcount" "$rfail")
+    JSON_ENTRIES="${JSON_ENTRIES},"
   else
     printf "%-40s %6s tests" "$rname" "$rcount"
     [ "$rfail" != "0" ] && printf " (%s FAILED)" "$rfail"
@@ -120,7 +123,9 @@ for dir in "$PROJECTS_DIR"/*/; do
 done
 
 if [ "$JSON_MODE" = true ]; then
-  echo "{\"total\": $TOTAL, \"repos\": $REPOS_TESTED}"
+  # Remove trailing comma and wrap in array
+  JSON_ENTRIES=${JSON_ENTRIES%,}
+  printf '[%s]\n{"total": %d, "repos": %d}\n' "$JSON_ENTRIES" "$TOTAL" "$REPOS_TESTED"
 else
   echo "─────────────────────────────────────────────────"
   printf "FLEET TOTAL: %d tests across %d repos\n" "$TOTAL" "$REPOS_TESTED"
