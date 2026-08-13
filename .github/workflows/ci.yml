@@ -1,0 +1,39 @@
+name: Fleet Inventory CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Run fleet-tests.sh tests
+        run: |
+          chmod +x test_fleet_tests.sh
+          ./test_fleet_tests.sh
+
+      - name: Validate markdown docs exist
+        run: |
+          for doc in README.md FLEET-ASSESSMENT.md STUDY-REPO-ASSESSMENT.md DEEP-REPO-ASSESSMENT.md; do
+            if [ ! -f "$doc" ]; then
+              echo "Missing required doc: $doc"
+              exit 1
+            fi
+          done
+          echo "All required documents present"
+
+      - name: Validate fleet-tests.sh syntax
+        run: bash -n fleet-tests.sh && echo "Syntax OK"
