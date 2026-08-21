@@ -30,7 +30,7 @@ Six documents scanning 200+ repos. The honest map of what the fleet has built, w
 - **Vessel Agent System (AELMA)** — 178 files, 34 test suites. The marine stack.
 
 **Close but needs polish:**
-- [officers-quarters](https://github.com/SuperInstance/officers-quarters) · [platos-shell](https://github.com/SuperInstance/platos-shell) · [the-tap](https://github.com/SuperInstance/the-tap) · [scummvm-arcade](https://github.com/SuperInstance/scummvm-arcade) · [collective-unconscious](https://github.com/SuperInstance/collective-unconscious)
+- [elephant](https://github.com/SuperInstance/elephant) · [platos-shell](https://github.com/SuperInstance/platos-shell) · [the-tap](https://github.com/SuperInstance/the-tap) · [scummvm-arcade](https://github.com/SuperInstance/scummvm-arcade) · [collective-unconscious](https://github.com/SuperInstance/collective-unconscious)
 
 **Highest-leverage integration:**
 Slackwater-Perception → Collective Unconscious → MUD Engine. That triangle is the product.
@@ -50,7 +50,7 @@ Slackwater-Perception → Collective Unconscious → MUD Engine. That triangle i
 
 ## Fleet Connections
 
-- [fleet-wiki](https://github.com/SuperInstance/fleet-wiki) — wiki pulls fleet status from these assessments
+- [lucineer-fleet-wiki](https://github.com/SuperInstance/lucineer-fleet-wiki) — wiki pulls fleet status from these assessments
 - [cocapn-dashboard](https://github.com/SuperInstance/cocapn-dashboard) — dashboard visualizes fleet status data
 - [fleet-connections](https://github.com/SuperInstance/fleet-connections) — integration keel implements the wiring plans from DEEP-REPO-ASSESSMENT
 - [fleet-envelope](https://github.com/SuperInstance/fleet-envelope) — event grammar for the integrations listed here

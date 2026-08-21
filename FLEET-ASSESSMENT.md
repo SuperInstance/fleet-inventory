@@ -82,7 +82,7 @@ ESP32 firmware concepts — the "holo-emitter" metaphor. The Ensign is the runti
 
 Vessel protocol definitions for the Plato network stack. Defines how vessels communicate in the fleet.
 
-### hermes-perception
+### hermes-avatar
 **Status:** 🔴 empty · **Last touched:** no commits
 
 Despite the name and the vision in si-main's README (stereo camera triangulation, first-person framing, halibut identification), this repo has no code. The vision lives in the README of si-main and in AELMA's twin module. This is a placeholder.
@@ -123,7 +123,7 @@ Cognitive friction monitoring using Φ (phi). Triadic architecture: a Harmony Go
 **Key files:** `governor.py`, `executive.py`, `groove_detector.py`, `flow_state.py`, `sandbox.py`
 **Integration target:** Monitors agent wellbeing in the MUD Engine and Officers' Quarters. When Φ spikes, the Executive improvises. Flow State protects the good times.
 
-### log-tensor
+### murmur
 **Status:** 🟡 needs polish · **Last touched:** 2026-08-08 · 4 test files
 
 Geometric tensor transformers reconceived as guidance systems. Uses proportional navigation (missile guidance theory) for attention mechanisms. The Homing Geometric Transformer extends standard attention with a proportional navigation term: `Attention = softmax(⟨Q,K⟩ + ω·(Q∧K) + N·Vc·λ̇)`. Deep research code — mathematically sound, not production-deployed.
@@ -165,7 +165,7 @@ A modular text-based game engine for AI agents. Packages: core (world state), tr
 **Key files:** `packages/core/src/`, `packages/triggers/src/`, `packages/agent-runtime/src/`, `packages/dm-rotation/src/`, `packages/strategy-guild/src/`
 **Integration target:** This is the game engine. Slackwater-Cognition's Local Thinker is the agent runtime. Slackwater-Harmony monitors game friction. Slackwater-Perception encodes what agents perceive. Collective Unconscious provides long-term memory. Room-render provides the rendering abstraction.
 
-### officers-quarters
+### elephant
 **Status:** 🟡 needs polish · **27 TS files, 3 test files** · **Last touched:** 2026-08-09
 
 12-room Phaser game with Intelligent Terminals and tile evolution. Rooms: Bridge (command center), Flash Station (speed/reflex), Pro Station (deep reasoning), Wesley Station (creative), Scribe Station (memory/records), Hermes Station (communication/routing), and more. Systems: tile-evolution, tile-actors, tile-actor-bus, intelligent-terminal, navigator-terminal, ripple-crdt. Includes a full fish identification demo with species data, sighting generation, and an ID agent.
@@ -202,7 +202,7 @@ A from-scratch SCUMM engine in a single HTML file. Vanilla JS, no frameworks. Wa
 
 **Integration target:** Reference implementation for ScummVM Arcade. The poker engine feeds into The Tap's poker room.
 
-### mud-arena
+### mud-engine
 **Status:** 🟡 needs polish · **25 Python files, 22 test files** · **Last touched:** 2026-08-08
 
 Agent simulation arena using MUD mechanics. Graph-structured rooms, inventories, adventure-game commands. Built-in genetic algorithm for breeding agent strategies. Evolution-ready gym environment for AI agents.
@@ -418,7 +418,7 @@ Art asset catalog, prompt library, creative range analysis. Scans and classifies
 
 **Integration target:** Asset management for Lucineer's creative pipeline. Knows what art exists so we don't regenerate it.
 
-### lucineer-brain
+### lucineer-system
 **Status:** 🟡 needs polish · **11 Python files, 8 test files** · **Last touched:** 2026-08-07**
 
 4-stage multi-model pipeline: intent parsing → spatial decomposition → code generation → validation. Routes through DeepInfra models. Outputs JSON matching CommandExecutor schema.
@@ -439,12 +439,12 @@ MMX-powered asset generation: concept art, ambient music, build plans, narration
 
 **Integration target:** The Roblox client. This is the game world that Lucineer builds into. Should connect to AELMA for vessel data and to the MUD Engine for text-mode twin.
 
-### tensor-midi
+### fleet-jepa-midi
 **Status:** 🟡 needs polish · **29 JS files, 7 test files, wrangler.toml** · **Last touched:** 2026-08-08**
 
 Conversation as music. Dialogue as jazz. Four instruments: Piano (Claude/Sonnet), Saxophone (Kimi/K3), Bass (OpenCode/GLM), Producer (MMX/MiniMax). SWMIDI-8 wire format. DAW-style mixer board.
 
-**Integration target:** Renders fleet conversations as live jazz. Pairs with Slackwater-Perception's MIDI encoding — perception encodes, tensor-midi performs.
+**Integration target:** Renders fleet conversations as live jazz. Pairs with Slackwater-Perception's MIDI encoding — perception encodes, fleet-jepa-midi performs.
 
 ### songforge
 **Status:** 🟡 needs polish · **14 Python files, 6 test files** · **Last touched:** 2026-08-08**
@@ -472,7 +472,7 @@ A living library of AI voices. Each model is an instrument. The score that knows
 ## 8. The Integration Map
 
 ```
-                     hermes-nmi    collective-unconscious    mud-engine    officers-quarters    lucineer-worker    the-tap    slackwater-forge
+                     hermes-nmi    collective-unconscious    mud-engine    elephant    lucineer-worker    the-tap    slackwater-forge
 slackwater-perc.  →                 ✅ MIDI → embed          ✅ agent perc.  ✅ tile sensing       ✅ build feedback   ✅ vibe    ✅ overnight art
 slackwater-cogn.  →   ✅ action     →                        ✅ Local Think ✅ terminal agent      ✅ brain pipeline   ✅ conv.   ✅ overnight think
 slackwater-harm.  →   ✅ tension    →   ✅ vibe embedding     ✅ Φ monitor    ✅ flow state          ✅ build flow       ✅ mood    ✅ briefing
@@ -481,7 +481,7 @@ slackwater-tempo  →   ✅ timing      →                        ✅ game cloc
 slackwater-tminus →   ✅ dispatch   →                        ✅ event sync   ✅ tile coord.         ✅ staged builds    ✅ tasks   ✅
 sensor-bridge     →   ✅ telemetry  →                        →              →                      →                   ✅ alerts  ✅ briefing
 vessel-agent-sys  →   ✅ actions    →   ✅ embed tracks       →              →                      →                   ✅ alerts  ✅ morning data
-log-tensor        →                   ✅ JEPA attention       →              →                      →                   →          ✅
+murmur        →                   ✅ JEPA attention       →              →                      →                   →          ✅
 slackwater-rust   →   ✅ native core →   ✅ fast embed         ✅ native core  ✅ native core         ✅ native core      →          ✅
 collective-uncon  →                   SELF                     ✅ agent memory ✅ tile memory         ✅ build history    ✅ lore    ✅ overnight mem
 fleet-envelope    →   ✅ event fmt   →   ✅ event fmt          ✅ event fmt    ✅ event fmt           ✅ event fmt        ✅ fmt     ✅
@@ -543,7 +543,7 @@ Instead of polling "is the build done?", Lucineer declares "the foundation will 
 
 **The Tap's Rust cores are thin.** tap-reflex and tap-dynamics have integration tests but the source is minimal (single lib.rs files). The real intelligence lives in the TypeScript workers.
 
-**No unified deployment pipeline.** Wrangler configs exist in 6+ repos (lucineer-worker, lucineer-vector, lucineer-memory, fleet-pipeline, luciddreamer-ai, the-tap, the-listeners-ear, study-flagship, study-si-agent, tensor-midi). Each deploys independently. No monorepo, no coordinated deploy, no environment management.
+**No unified deployment pipeline.** Wrangler configs exist in 6+ repos (lucineer-worker, lucineer-vector, lucineer-memory, fleet-pipeline, luciddreamer-ai, the-tap, the-listeners-ear, study-flagship, study-si-agent, fleet-jepa-midi). Each deploys independently. No monorepo, no coordinated deploy, no environment management.
 
 **holodeck is underdeveloped.** 26 source files, but the vision (Wesley practicing in a simulation) hasn't connected to the robust Wesley CNS Adapter or the Living Minds system. The creative feedback loop between Wesley's writing and visual rendering needs completion.
 

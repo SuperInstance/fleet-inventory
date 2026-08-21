@@ -23,7 +23,7 @@ After reading the actual code across all 10 repos, here's the honest picture:
 
 **Significant but research-heavy:**
 7. **stigmergy** — Bio-inspired pheromone coordination. Works as advertised but needs a spatial topology (room adjacency) to propagate through. Pairs with spatial-registry.
-8. **log-tensor** — Missile-guidance attention. The math is legitimate (PN guidance + Kalman filtering + geometric algebra). But it's research code — no production wiring, pure NumPy.
+8. **murmur** — Missile-guidance attention. The math is legitimate (PN guidance + Kalman filtering + geometric algebra). But it's research code — no production wiring, pure NumPy.
 9. **forgemaster** — A research flywheel + grimoire (spell book vector DB). The flywheel auto-generates CUDA experiments. The grimoire stores executable scripts as invocable spells. Niche but powerful.
 10. **study-sunset-ecosystem** — 8,729 tests across an enormous codebase. Contains working JEPA, metronome, consensus, room grid, and breeding systems. But it's a research ecosystem, not a library — extraction is significant.
 
@@ -58,14 +58,14 @@ This is not metaphorical — it literally converts game state to MIDI events wit
 
 ### How It Connects to What We Built
 
-- **hermes-perception** (currently empty) should import slackwater-perception directly. The `encode_game_state()` method IS the perception layer.
+- **hermes-avatar** (currently empty) should import slackwater-perception directly. The `encode_game_state()` method IS the perception layer.
 - **collective-unconscious** — perception outputs get embedded as vectors. MIDI tracks → embed → search → JEPA prediction.
 - **mud-engine** — the `triggers` package should emit game state dicts that perception encodes.
 
 ### Integration Plan
 
 ```python
-# In hermes-perception/src/perception.py (NEW FILE)
+# In hermes-avatar/src/perception.py (NEW FILE)
 from slackwater_perception.encoder import MultiTrackEncoder, TrackType
 from slackwater_perception.intention import IntentionPropagator
 from slackwater_perception.attention import AttentionTracker
@@ -425,7 +425,7 @@ function selectModelForTier(tier: ModelTier, taskType: string): string {
 
 ---
 
-## 6. log-tensor — Guidance-System Transformers
+## 6. murmur — Guidance-System Transformers
 
 ### What the Code ACTUALLY Does
 
@@ -859,12 +859,12 @@ eventBus.on('alert', (alert) => {
 | **cns-bridge** | 🔴 Critical | 1 day | **CRITICAL** | Every system needs to communicate. The TS client is the missing piece. |
 | **casting-call** | 🟠 High | 3h | **HIGH** | One import replaces TOOLS.md's routing table. Already has our models. |
 | **confidence-cascade** | 🟠 High | 2h | **HIGH** | Every pipeline needs confidence scoring. npm package, ready to import. |
-| **slackwater-perception** | 🟠 High | 4-6h | **HIGH** | Fills the hermes-perception gap. encode_game_state() is the bridge. |
+| **slackwater-perception** | 🟠 High | 4-6h | **HIGH** | Fills the hermes-avatar gap. encode_game_state() is the bridge. |
 | **thought-amplifier** | 🟠 High | 2-3h | **HIGH** | Free overnight compute. Morning briefings already write to workspace. |
 | **zeroclaw + casting-call** | 🟡 Medium | 3h | **MEDIUM** | Gives ZeroClaw agents intelligent model selection per task. |
 | **stigmergy** | 🟡 Medium | 4-6h | **MEDIUM** | Vibe propagation needs spatial-registry to be complete first. |
 | **forgemaster (grimoire)** | 🟡 Medium | 1 day | **MEDIUM** | Fleet spell library. Novel and useful but not blocking. |
-| **log-tensor** | 🟢 Low | 1-2 days | **LOW** | Research code. Math is sound but needs validation against real data. |
+| **murmur** | 🟢 Low | 1-2 days | **LOW** | Research code. Math is sound but needs validation against real data. |
 | **study-sunset-ecosystem** | 🟢 Low | 1-2h (svc) / 1-2d (extract) | **MEDIUM** | Run as background service for JEPA/consensus. Extraction is heavy. |
 
 ---

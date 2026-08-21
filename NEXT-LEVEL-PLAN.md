@@ -161,7 +161,7 @@ Expose Slackwater-Rust's three production crates to the entire fleet:
 
 **Estimated effort:** 2-3 weeks for PyO3. +1 week for napi-rs. +1 week for WASM/Luau.
 
-**Repos involved:** slackwater-rust (add bindings), slackwater-perception/cognition/harmony/lattice (consume bindings), lucineer-roblox (Lua consumer), officers-quarters (TS consumer).
+**Repos involved:** slackwater-rust (add bindings), slackwater-perception/cognition/harmony/lattice (consume bindings), lucineer-roblox (Lua consumer), elephant (TS consumer).
 
 ---
 
@@ -273,7 +273,7 @@ Phase 1 (minimum viable perception):
 
 **Estimated effort:** 2 weeks for MVP (depth maps + object detection + lattice mapping + vibe descriptors). 4-6 weeks for production-grade stereo with calibrated fish identification.
 
-**Repos involved:** hermes-perception (build from scratch), sensor-bridge (input), slackwater-rust (calibration), vibe-protocol (descriptors), cns-bridge (output), collective-unconscious (storage), vessel-agent-system (fish data), officers-quarters (fish ID demo).
+**Repos involved:** hermes-avatar (build from scratch), sensor-bridge (input), slackwater-rust (calibration), vibe-protocol (descriptors), cns-bridge (output), collective-unconscious (storage), vessel-agent-system (fish data), elephant (fish ID demo).
 
 ---
 
@@ -367,8 +367,8 @@ Claude Code reviewed the plan and provided concrete integration analysis:
 |-------------|--------|----------|
 | **zeroclaw ↔ the-tap** | tap-adapter EXISTS and works | Just need zeroclaw's 5 crew to emit() — receiving side is done |
 | **collective-unconscious ↔ ai-writings** | No adapter for either | Real integration work — both sides need building |
-| **mud-engine ↔ officers-quarters** | Both substantial, no adapter | Real work + decide spatial-registry question first |
-| **hermes-perception ↔ hermes-cloudflare** | hermes-perception README says it wires four repos | 5-minute read before committing hours — don't guess |
+| **mud-engine ↔ elephant** | Both substantial, no adapter | Real work + decide spatial-registry question first |
+| **hermes-avatar ↔ hermes-cloudflare** | hermes-avatar README says it wires four repos | 5-minute read before committing hours — don't guess |
 | **smp-notebook ↔ ollama** | Zero Ollama calls in smp-notebook | Trivial technically (HTTP call to :11434), low visible payoff |
 | **seed-logging ↔ collective-unconscious** | seed-logging.ts exists and tested, zero CU references | Emitting side solid — just needs one write call added |
 

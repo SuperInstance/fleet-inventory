@@ -1,7 +1,7 @@
 # Integration Matrix
 
 ```
-                     hermes-nmi    collective-unconscious    mud-engine    officers-quarters    lucineer-worker    the-tap    slackwater-forge
+                     hermes-nmi    collective-unconscious    mud-engine    elephant    lucineer-worker    the-tap    slackwater-forge
 slackwater-perc.  →                 ✅ MIDI → embed          ✅ agent perc.  ✅ tile sensing       ✅ build feedback   ✅ vibe    ✅ overnight art
 slackwater-cogn.  →   ✅ action     →                        ✅ Local Think ✅ terminal agent      ✅ brain pipeline   ✅ conv.   ✅ overnight think
 slackwater-harm.  →   ✅ tension    →   ✅ vibe embedding     ✅ Φ monitor    ✅ flow state          ✅ build flow       ✅ mood    ✅ briefing
@@ -10,7 +10,7 @@ slackwater-tempo  →   ✅ timing      →                        ✅ game cloc
 slackwater-tminus →   ✅ dispatch   →                        ✅ event sync   ✅ tile coord.         ✅ staged builds    ✅ tasks   ✅
 sensor-bridge     →   ✅ telemetry  →                        →              →                      →                   ✅ alerts  ✅ briefing
 vessel-agent-sys  →   ✅ actions    →   ✅ embed tracks       →              →                      →                   ✅ alerts  ✅ morning data
-log-tensor        →                   ✅ JEPA attention       →              →                      →                   →          ✅
+murmur        →                   ✅ JEPA attention       →              →                      →                   →          ✅
 slackwater-rust   →   ✅ native core →   ✅ fast embed         ✅ native core  ✅ native core         ✅ native core      →          ✅
 collective-uncon  →                   SELF                     ✅ agent memory ✅ tile memory         ✅ build history    ✅ lore    ✅ overnight mem
 fleet-envelope    →   ✅ event fmt   →   ✅ event fmt          ✅ event fmt    ✅ event fmt           ✅ event fmt        ✅ fmt     ✅
