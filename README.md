@@ -2,6 +2,8 @@
 
 > *You do not read it to celebrate. You read it so you do not grab something that will crumble the second you put weight on it.*
 
+<img src="assets/images/hero.jpg" alt="The quartermaster's clipboard under a warm lamp — handwritten manifests on a chart table in a navy-dark hold" width="720"/>
+
 Six documents scanning 200+ repos. The honest map of what the fleet has built, what works, what's close, and what's research. Read these before starting new work.
 
 **Created:** August 9, 2026 · **Last scan:** August 9, 2026 · **Total repos:** 200+
